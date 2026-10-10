@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histori Transaksi — SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="halaman-dalam">
+
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="dashboard.html">SITTA UT</a>
+      <nav class="menu-nav">
+        <a href="dashboard.html">Beranda</a>
+        <a href="stok.html">Informasi Bahan Ajar</a>
+        <a href="tracking.html">Tracking Pengiriman</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="histori.html" class="aktif">Histori Transaksi</a>
+      </nav>
+      <div class="user-info">
+        <button class="btn btn-kecil" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- bagian tabel histori, isinya saya render lewat js/histori.js dari array dataTracking -->
+  <main class="container">
+    <section>
+      <p id="greeting"></p>
+      <h1>Histori Transaksi Bahan Ajar</h1>
+      <p>Riwayat seluruh transaksi pengiriman bahan ajar.</p>
+    </section>
+
+    <section class="card">
+      <div class="tabel-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nomor DO</th>
+              <th>Nama</th>
+              <th>Paket</th>
+              <th>Tanggal Kirim</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyHistori"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SITTA — Universitas Terbuka</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/histori.js"></script>
+</body>
+</html>

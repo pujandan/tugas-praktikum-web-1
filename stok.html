@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Stok Bahan Ajar — SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="halaman-dalam">
+
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="dashboard.html">SITTA UT</a>
+      <nav class="menu-nav">
+        <a href="dashboard.html">Beranda</a>
+        <a href="stok.html" class="aktif">Informasi Bahan Ajar</a>
+        <a href="tracking.html">Tracking Pengiriman</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="histori.html">Histori Transaksi</a>
+      </nav>
+      <div class="user-info">
+        <button class="btn btn-kecil" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- bagian tabel stok, isinya saya render lewat js/stok.js dari array dataBahanAjar -->
+  <main class="container">
+    <section>
+      <p id="greeting"></p>
+      <h1>Informasi Stok Bahan Ajar</h1>
+      <p>Data stok ditampilkan secara dinamis dari <code>js/data.js</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Tabel Stok Bahan Ajar</h2>
+      <div class="tabel-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cover</th>
+              <th>Kode Lokasi</th>
+              <th>Kode Barang</th>
+              <th>Nama Barang</th>
+              <th>Jenis</th>
+              <th>Edisi</th>
+              <th>Stok</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyStok"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- bagian form untuk menambah baris stok baru -->
+    <section class="card">
+      <h2>Tambah Stok Bahan Ajar Baru</h2>
+      <form id="formStok" class="form-grid">
+        <div>
+          <label for="kodeLokasi">Kode Lokasi</label>
+          <input type="text" id="kodeLokasi" placeholder="0JKT01">
+        </div>
+        <div>
+          <label for="kodeBarang">Kode Barang</label>
+          <input type="text" id="kodeBarang" placeholder="EKMA4216">
+        </div>
+        <div>
+          <label for="namaBarang">Nama Barang</label>
+          <input type="text" id="namaBarang" placeholder="Nama bahan ajar">
+        </div>
+        <div>
+          <label for="jenisBarang">Jenis Barang</label>
+          <input type="text" id="jenisBarang" placeholder="BMP">
+        </div>
+        <div>
+          <label for="edisi">Edisi</label>
+          <input type="number" id="edisi" min="1" placeholder="1">
+        </div>
+        <div>
+          <label for="stok">Stok</label>
+          <input type="number" id="stok" min="0" placeholder="100">
+        </div>
+        <!-- kolom upload gambar cover, boleh dikosongkan nanti pakai placeholder -->
+        <div>
+          <label for="cover">Cover Buku (Opsional)</label>
+          <input type="file" id="cover" accept="image/*">
+        </div>
+        <div style="margin-top: 10px">
+          <button type="submit" class="btn">Simpan</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SITTA — Universitas Terbuka</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/stok.js"></script>
+</body>
+</html>

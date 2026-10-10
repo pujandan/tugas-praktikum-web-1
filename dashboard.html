@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — SITTA Universitas Terbuka</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="halaman-dalam">
+
+  <!-- bagian navbar yang dipakai sama semua halaman dalam -->
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="dashboard.html">SITTA UT</a>
+      <nav class="menu-nav">
+        <a href="dashboard.html" class="aktif">Beranda</a>
+        <a href="stok.html">Informasi Bahan Ajar</a>
+        <a href="tracking.html">Tracking Pengiriman</a>
+        <a href="laporan.html">Laporan</a>
+        <a href="histori.html">Histori Transaksi</a>
+      </nav>
+      <div class="user-info">
+        <button class="btn btn-kecil" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- bagian konten dashboard berisi sapaan dan kartu profil user yang login -->
+  <main class="container">
+    <section>
+      <p id="greeting"></p>
+      <h1>Dashboard</h1>
+      <p>Selamat datang di SITTA. Gunakan menu navigasi di bagian atas untuk mengakses layanan.</p>
+    </section>
+
+    <section class="card">
+      <h2>Profil Pengguna</h2>
+      <p><strong id="profNama"></strong><br>
+         Role: <span id="profRole"></span><br>
+         Lokasi: <span id="profLokasi"></span></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SITTA — Universitas Terbuka | Tugas Praktik 1 Pemrograman Berbasis Web</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

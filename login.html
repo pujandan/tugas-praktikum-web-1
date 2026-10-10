@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — SITTA Universitas Terbuka</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="halaman-login">
+
+  <main>
+    <section class="card login-card">
+      <header>
+        <h1>SITTA</h1>
+        <p>Sistem Informasi Tiras dan Transaksi Bahan Ajar<br>Universitas Terbuka</p>
+      </header>
+
+      <!-- form login, email dan passwordnya saya validasi lewat login.js -->
+      <form id="formLogin">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@ut.ac.id" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="password" required>
+
+        <button type="submit" class="btn btn-full">Login</button>
+      </form>
+
+      <nav class="login-links">
+        <button type="button" class="btn-link" onclick="bukaModal('modalLupa')">Lupa Password?</button>
+        <button type="button" class="btn-link" onclick="bukaModal('modalDaftar')">Daftar</button>
+      </nav>
+
+      <footer>
+        <p><small>© 2026 Universitas Terbuka — Tugas Praktik 1 PBW</small></p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- modal lupa password, karena belum ada backend jadi hanya simulasi alert -->
+  <div id="modalLupa" class="modal">
+    <section class="card modal-box">
+      <header class="modal-head">
+        <h2>Lupa Password</h2>
+        <button class="btn-tutup" onclick="tutupModal('modalLupa')">&times;</button>
+      </header>
+      <form id="formLupa">
+        <label for="emailLupa">Masukkan email terdaftar Anda</label>
+        <input type="email" id="emailLupa" placeholder="nama@ut.ac.id">
+        <button type="submit" class="btn btn-full">Kirim Instruksi Reset</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- modal daftar akun baru, datanya langsung masuk ke array dataPengguna lewat login.js -->
+  <div id="modalDaftar" class="modal">
+    <section class="card modal-box">
+      <header class="modal-head">
+        <h2>Daftar Akun Baru</h2>
+        <button class="btn-tutup" onclick="tutupModal('modalDaftar')">&times;</button>
+      </header>
+      <form id="formDaftar">
+        <label for="namaDaftar">Nama Lengkap</label>
+        <input type="text" id="namaDaftar" placeholder="Nama lengkap">
+        <label for="emailDaftar">Email</label>
+        <input type="email" id="emailDaftar" placeholder="nama@ut.ac.id">
+        <label for="passwordDaftar">Password</label>
+        <input type="password" id="passwordDaftar" placeholder="min. 6 karakter">
+        <button type="submit" class="btn btn-full">Daftar</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
