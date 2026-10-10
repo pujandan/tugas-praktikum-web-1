@@ -15,9 +15,9 @@ function getUser() {
 // fungsi sapaWaktu untuk menentukan sapaan sesuai jam, saya bagi jadi pagi siang sore dan malam
 function sapaWaktu() {
   var jam = new Date().getHours();
-  if (jam >= 4 && jam < 11) return "Selamat pagi";
+  if (jam >= 5 && jam < 11) return "Selamat pagi";
   if (jam >= 11 && jam < 15) return "Selamat siang";
-  if (jam >= 15 && jam < 19) return "Selamat sore";
+  if (jam >= 15 && jam < 18) return "Selamat sore";
   return "Selamat malam";
 }
 

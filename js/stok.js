@@ -57,14 +57,22 @@ document.getElementById("formStok").addEventListener("submit", function (e) {
     }
   }
 
-  // Cover opsional: bila diunggah, baca gambarnya dengan FileReader
+  // Cover opsional: bila diunggah, ekstensi filenya saya cek dulu, hanya png jpg jpeg yang saya izinkan
   var inputCover = document.getElementById("cover");
   if (inputCover.files && inputCover.files[0]) {
+    var file = inputCover.files[0];
+    var diizinkan = ["png", "jpg", "jpeg"];
+    var ekstensi = file.name.split(".").pop().toLowerCase();
+    if (diizinkan.indexOf(ekstensi) === -1) {
+      alert("Format cover harus PNG, JPG, atau JPEG.");
+      inputCover.value = "";
+      return;
+    }
     var pembaca = new FileReader();
     pembaca.onload = function (e) {
       simpanBarisStok(e.target.result);
     };
-    pembaca.readAsDataURL(inputCover.files[0]);
+    pembaca.readAsDataURL(file);
   } else {
     simpanBarisStok(coverKosong);
   }
